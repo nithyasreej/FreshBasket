@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Sign up</title>
+    <style>
+      body{
+ margin: 20%;
+ padding:10%;
+ font-family:sans-serif;
+ background-image:url("https://www.aimforclimate.org/media/yp4hkeq3/farmer.jpg");
+ background-size:cover;
+ background-position:center;
+ }
+ .myform{
+ width:250px;
+ box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+ background:white;
+ padding:5px;
+ margin:8% auto 0;
+ text-align:center;
+ }
+ img{
+  width:100px;
+  margin-top:-150px;
+  }
+  body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: grey;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+
+
+/* Float cancel and signup buttons and add an equal width */
+.signupbtn {
+  float: left;
+  width: 100%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .signupbtn {
+     width: 100%;
+  }
+}
+    </style>
+</head>
+
+<body>
+    <script>  
+        function validateform(){  
+        var name=document.myform.name.value;  
+        var password=document.myform.password.value;  
+        var cpassword=document.myform.cpassword.value;  
+        var x=document.myform.email.value;  
+        var atposition=x.indexOf("@");  
+        var dotposition=x.lastIndexOf(".");
+        var y=document.myform.phno.value;
+        if (name==null || name==""){  
+          alert("Name can't be blank");  
+          return false;  
+        }
+        else if(name.length>20){  
+          alert("name must be at most 20 characters long.");  
+          return false;  
+          }  
+        
+        else if(password.length<5){  
+          alert("Password must be at least 5 characters long.");  
+          return false;  
+          }
+          else if(password!=cpassword){
+          alert("Passwords are not matching");
+          }
+           
+        else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+          alert("Please enter a valid e-mail address");  
+          return false;  
+          }  
+          else if(y.length<10 || y.length>10){  
+          alert("Phone number must be of 10 numbers long.");  
+          return false;  
+          }
+        }
+        
+               
+        </script>  
+        <img src="https://dynamic.brandcrowd.com/asset/logo/de605803-e8e7-4349-9366-e3e2918cb659/logo-search-grid-1x?v=637594158849630000&text=fresh+basket">
+        <form name="myform" onsubmit="return validateform()" style="border:1px solid #ccc">
+          <div class="container">
+            <h1>Sign In</h1>
+            
+            <hr>
+        
+            <label for="email"><b>Email</b></label>
+            <input type="text" name="email" required>
+         
+         <label for="phno"><b>Phone number</b></label>
+         <input type="text" name="phno" required>
+         
+            <label for="password"><b>Password</b></label>
+            <input type="password" name="password" required>
+        
+              <button type="submit" class="signupbtn"><a href="index.html">Sign In</a></button>
+           <a href ="usersignup.html"> Don't have an account?</a>
+            </div>
+          </div>
+        </form>
+</body>
+
+</html>
